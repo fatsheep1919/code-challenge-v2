@@ -25,15 +25,15 @@ const ModalClose = styled.div`
   position: absolute;
   right: 15px;
   top: 10px;
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   border-radius: 3px;
   background-color: ${props => props.theme.modal.close.bg};
   cursor: pointer;
 `;
 
 const CloseIcon = (props: { color: string }) => (
-  <svg width="24" height="24" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <svg width="22" height="22" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
     <g fill="none" stroke={props.color} strokeLinecap="round" strokeLinejoin="round" strokeWidth="32">
       <path d="m368 368-224-224"/>
       <path d="m368 144-224 224"/>
@@ -48,20 +48,6 @@ const ModalContent = styled.div`
   margin-top: 30px;
 `;
 
-const ButtonPrimary = styled.button`
-  width: 100%;
-  padding: 12px;
-  font-size: 14px;
-  text-align: center;
-  line-height: 30px;
-  border: none;
-  margin-top: 20px;
-  border-radius: 5px;
-  background-color: ${props => props.theme.modal.button.bg};
-  color: ${props => props.theme.modal.button.fg};
-  cursor: pointer;
-`;
-
 const Button = styled.button`
   width: 100%;
   padding: 8px;
@@ -74,6 +60,14 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
+const ButtonPrimary = styled(Button)`
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 5px;
+  background-color: ${props => props.theme.modal.button.bg};
+  color: ${props => props.theme.modal.button.fg};
+`;
+
 export default function Modal() {
   const theme = useTheme();
   return (
@@ -83,8 +77,8 @@ export default function Modal() {
       </ModalClose>
       <ModalTitle>Deposit ATOM</ModalTitle>
       <ModalContent>
-        <SelectAddress></SelectAddress>
-        <SelectAmount></SelectAmount>
+        <SelectAddress />
+        <SelectAmount />
       </ModalContent>
       <Message />
       <ButtonPrimary>Transfer</ButtonPrimary>

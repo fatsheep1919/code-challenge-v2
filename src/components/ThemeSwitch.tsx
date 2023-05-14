@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React from "react";
 import { styled } from "styled-components";
 
 import { THEME_TYPE } from '@/theme';
@@ -59,17 +59,17 @@ interface IProps {
 
 export default function ThemeSwitch(props: IProps) {
   const { onChange } = props;
-  const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChange?.(e.target.checked ? 'dark' : 'light');
-  }, [onChange]);
+  };
 
   return (
     <SwitchWrap>
       <div>Light</div>
       <Switch>
-        <SwitchInput onChange={handleChange}></SwitchInput>
-        <SwitchBG></SwitchBG>
-        <SwitchHandler></SwitchHandler>
+        <SwitchInput onChange={handleChange} />
+        <SwitchBG />
+        <SwitchHandler />
       </Switch>
       <div>Dark</div>
     </SwitchWrap>

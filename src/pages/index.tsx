@@ -17,13 +17,12 @@ const defaultTheme: THEME_TYPE = 'light';
 
 export default function IndexPage() {
   const [curTheme, setCurTheme] = useState(defaultTheme);
-
   return (
     <PageWrap>
-      <ThemeSwitch onChange={(themeName) => setCurTheme(themeName)}></ThemeSwitch>
+      <ThemeSwitch onChange={(themeName) => setCurTheme(themeName)} />
       <ThemeProvider theme={THEMES[curTheme]}>
-        <Modal></Modal>
+        <Modal />
       </ThemeProvider>
     </PageWrap>
-  )
+  );
 }

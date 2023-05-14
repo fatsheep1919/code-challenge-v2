@@ -1,4 +1,4 @@
-import { styled, useTheme } from "styled-components";
+import { styled } from "styled-components";
 
 const AmountWrap = styled.div`
   display: flex;
@@ -14,12 +14,17 @@ const AmountHead = styled.div`
 
 const AmountTitle = styled.div`
   font-size: 14px;
+  font-weight: 500;
   color: ${props => props.theme.modal.amount.title};
 `;
 
-const AmountTip = styled.div`
+const AmountTip = styled.span`
   font-size: 12px;
   color: ${props => props.theme.modal.amount.title};
+`;
+
+const AmountTipPrimary = styled(AmountTip)`
+  font-weight: 500;
 `;
 
 const AmountInputWrap = styled.div`
@@ -69,8 +74,9 @@ const AmountInputTag = styled.div`
   background-color: ${props => props.theme.modal.amount.tag.bg};
   border-radius: 3px;
   font-size: 8px;
+  font-weight: 500;
   color: #667586;
-  padding: 2px 4px;
+  padding: 2px 6px;
 `;
 
 const InputIconWrap = styled.div`
@@ -100,12 +106,11 @@ const CosmosIcon = () => (
 );
 
 export default function SelectAmount() {
-  const theme = useTheme();
   return (
     <AmountWrap>
       <AmountHead>
         <AmountTitle>Select Amount</AmountTitle>
-        <AmountTip>Available 2 ATOM</AmountTip>
+        <AmountTip>Available <AmountTipPrimary>2 ATOM</AmountTipPrimary></AmountTip>
       </AmountHead>
       <AmountInputWrap>
         <CosmosIcon />

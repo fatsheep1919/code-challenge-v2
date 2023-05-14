@@ -3,23 +3,29 @@ import { styled, useTheme } from "styled-components";
 const MessageWrap = styled.div`
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   background: ${props => props.theme.modal.message.bg};
-  border-radius: 3px;
-  padding: 6px;
-  margin-top: 20px;
+  border-radius: 5px;
+  padding: 4px 6px;
+  margin: 20px 0 16px 0;
 `;
 
-const MessageContent = styled.div`
+const MessageContent = styled.span`
   font-size: 10px;
+  letter-spacing: -0.5px;
   color: ${props => props.theme.modal.message.fg};
+`;
+
+const MessageContentPrimary = styled(MessageContent)`
+  font-weight: 800;
+  color: ${props => props.theme.modal.message.primary};
 `;
 
 const ClockIcon = (props: { color: string }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="16"
-    height="16"
+    width="14"
+    height="14"
     viewBox="0 0 24 24"
     fill="none"
     stroke={props.color}
@@ -38,7 +44,7 @@ export default function Message() {
     <MessageWrap>
       <ClockIcon color={theme?.modal.message.fg} />
       <MessageContent>
-        Estimated time: 20 seconds
+        Estimated time: <MessageContentPrimary>20 seconds</MessageContentPrimary>
       </MessageContent>
     </MessageWrap>
   );

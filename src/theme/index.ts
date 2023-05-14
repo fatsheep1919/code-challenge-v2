@@ -27,6 +27,7 @@ export const light = {
     message: {
       bg: '#edf3f9',
       fg: '#32383f',
+      primary: '#2e333a',
     },
     button: {
       bg: '#2b3138',
@@ -64,6 +65,7 @@ export const dark = {
     message: {
       bg: '#131517',
       fg: '#eaeef6',
+      primary: '#dbdde4',
     },
     button: {
       bg: '#edf2f9',
