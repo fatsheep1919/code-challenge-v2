@@ -1,5 +1,6 @@
 import { styled, useTheme } from "styled-components";
 
+import CloseIcon from "@/icons/Close";
 import SelectAddress from "./SelectAddress";
 import SelectAmount from "./SelectAmount";
 import Message from "./Message";
@@ -31,15 +32,6 @@ const ModalClose = styled.div`
   background-color: ${props => props.theme.modal.close.bg};
   cursor: pointer;
 `;
-
-const CloseIcon = (props: { color: string }) => (
-  <svg width="22" height="22" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-    <g fill="none" stroke={props.color} strokeLinecap="round" strokeLinejoin="round" strokeWidth="32">
-      <path d="m368 368-224-224"/>
-      <path d="m368 144-224 224"/>
-    </g>
-  </svg>
-);
 
 const ModalContent = styled.div`
   display: flex;

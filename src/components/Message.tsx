@@ -1,5 +1,7 @@
 import { styled, useTheme } from "styled-components";
 
+import ClockIcon from "@/icons/Clock";
+
 const MessageWrap = styled.div`
   display: flex;
   align-items: center;
@@ -20,23 +22,6 @@ const MessageContentPrimary = styled(MessageContent)`
   font-weight: 800;
   color: ${props => props.theme.modal.message.primary};
 `;
-
-const ClockIcon = (props: { color: string }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="14"
-    height="14"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke={props.color}
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <circle cx="12" cy="12" r="10" />
-    <polyline points="12 6 12 12 16 14" />
-  </svg>
-);
 
 export default function Message() {
   const theme = useTheme();
